@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('Bem vindo')
+       function mudarTexto(){
+        const titulo = document.getElementById("titulo")
+        titulo.innerText = "Agora você vê"
+       }
+
+       function mudarSubtitulo(){
+        const subtitulo = document.getElementsByClassName("Subtitulo");
+        for(let i = 0; i < subtitulo.length; i++){
+        subtitulo[i].innerText = "Texto repetido"
+        }
+    }
+
+    function sumir(){
+        document.getElementById("titulo").style.fontSize = "1px"
+    }
+
+        function surgir(){
+        document.getElementById("titulo").style.fontSize = "30px"
+    }
+
+
+
+    </script>
+</head>
+<body>
+    <script src="script.js"></script>
+    <h1 id="titulo">Olá mundo</h1>    
+
+    <button onclick="sumir()">sumir</button>
+    <button onclick="surgir()">aparecer</button>
+
+    <h2>Veja a verdade</h2>
+    <button onclick="mudarTexto(), mudarSubtitulo()"> clique e veja </button>   
+
+    <h2 class="Subtitulo">gvuyguyv</h2>
+    <h2 class="Subtitulo">hhgwdvbjhsbgjh</h2>
+    <h2 class="Subtitulo">gihutjh</h2>
+
+    <button id="botao">Botão</button>
+<br>
+           <button onclick="incrementar()">+</button>
+   <button onclick="decrementar()">-</button>
+   <p id="contador">0</p>
+    <script>
+
+        const botao = document.getElementById("botao");
+
+        botao.addEventListener("click", function () {
+            alert("Você clicou no meu Botão !!!!");
+            console.log("Você clicou no meu Botão !!!!");
+        });
+</script>
+<script>
+    let count = 0;
+
+    function incrementar(){
+        count++;
+        document.getElementById("contador").innerText = count;
+    }
+
+    function decrementar(){
+        count--;
+        document.getElementById("contador").innerText = count;
+    }
+
+    </script>
+
+</body>
+</html>
