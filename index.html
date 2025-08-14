@@ -33,6 +33,7 @@
             position: absolute;
             top: 100px;
             left: 100px;
+            transform: rotateX(0);
         }
     </style>
 </head>
@@ -89,7 +90,8 @@
         // posição inicial
         let positionX = 100;
         let positionY = 100;
-        let angulo = 0;
+        let positionZ = 0;
+   
 
         document.addEventListener("keydown", function (event){
             const passo = 10;
@@ -106,15 +108,19 @@
                 positionX += passo;
             }
 
-            if (event.key.toLowerCase() === "r"){
-               angulo += 45;
-               personagem.style.transform = 'rotate(${angulo}deg)';
-            }
-
             personagem.style.top = positionY + 'px';
             personagem.style.left = positionX  + 'px';
         });
-    </script>
 
+        document.addEventListener('keydown', function (event){
+            const ang = 5;
+            if (event.key === "r"){
+                positionZ += ang;
+            }
+
+            personagem.style.transform = 'rotate' + '(' + positionZ + 'deg' + ')'
+        });
+    </script>
+r
 </body>
 </html>
